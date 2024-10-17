@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-image: radial-gradient(circle at center, #899Dc4, #495D84);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(ellipse at bottom, #1b2735, #090a0f);
+            font-weight: 300;
+        }
+        .all {
+            display: flex;
+            perspective: 10px;
+            transform: perspective(300px) rotateX(20deg);
+            will-change: perspective;
+            perspective-origin: center center;
+            transition: all 1.3s ease-out;
+            justify-content: center;
+            transform-style: preserve-3d;
+        }
+        .all:hover {
+            perspective: 1000px;
+            transition: all 1.3s ease-in;
+            transform: perspective(10000px) rotateX(0deg);
+            .text {
+              opacity: 1;
+            }
+            & > div {
+              opacity: 1;
+              transition-delay: 0s;
+            }
+            .explainer {
+              opacity: 0;
+            }
+        }
+        
+        .left, .center, .right, .lefter, .righter {
+            width: 200px;
+            height: 150px;
+            transform-style: preserve-3d;
+            border-radius: 10px;
+            border: 1px solid #fff;
+            box-shadow: 0 0 20px 5px rgba(100, 100, 255, .4);
+            opacity: 0;
+            transition: all .3s ease;
+            transition-delay: 1s;
+            position: relative;
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: #58d;
+            cursor: pointer;
+            background-blend-mode: color-burn;
+            
+            &:hover {
+              box-shadow: 0 0 30px 10px rgba(100, 100, 255, .6);
+              background-color: #ccf;
+            }
+        }
+        .text {
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all .3s ease;
+            bottom: 0;
+            left: 5px;
+            position: absolute;
+            will-change: transform;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(100, 100, 255, .6)
+        }
+        .lefter {
+            transform: translateX(-60px) translateZ(-50px) rotateY(-10deg);
+            background-image: url(https://th.bing.com/th/id/OIP.xwKY9B_Ay0Eidw04Qh-MOwHaK5?w=206&h=303&c=7&r=0&o=5&dpr=1.3&pid=1.7);
+        }
+        .left {
+            transform: translateX(-30px) translateZ(-25px) rotateY(-5deg);
+            background-image: url(https://icon-library.com/images/thinking-icon/thinking-icon-3.jpg);
+        }
+        .center {
+            opacity: 1;
+            background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/app_window-512.png);
+        }
+        .right {
+            transform: translateX(30px) translateZ(-25px) rotateY(5deg);
+            background-image: url(https://th.bing.com/th/id/OIP.nzU2AHzSgvPUAga2fu39KgHaIW?rs=1&pid=ImgDetMain);
+        }
+        .righter {
+            transform: translateX(60px) translateZ(-50px) rotateY(10deg);
+            background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/search-512.png);
+        }
+        .explainer {
+            font-weight: 300;
+            font-size: 2rem;
+            color: #fff;
+            transition: all .6s ease;
+            width: 100%;
+            height: 100%;
+            background-color: #303050;
+            background-image: radial-gradient(circle at center top, #cce, #33a);
+            border-radius: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, .8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="lefter" onclick="Funevent()">
+            <div class="text">FUN ZONE</div>
+        </div>
+        <div class="left" onclick="TechnicalEvents()">
+            <div class="text">TECHNICAL EVENTS</div>
+        </div>
+        <div class="center" onclick="GoogleForm()">
+            <div class="explainer"><span>Hover me</span></div>
+            <div class="text">REGISTER HERE</div>
+        </div>
+        <div class="right" onclick="OnlinePayment()">
+            <div class="text">CONTACT US</div>
+        </div>
+        <div class="righter" onclick="AboutUs()">
+            <div class="text">ABOUT US</div>
+        </div>
+    </div>
+
+    <script>
+        function Funevent() {
+            window.location.href = '#';
+        }
+        function TechnicalEvents() {
+            window.location.href = '#';
+        }
+        function GoogleForm() {
+            window.location.href = '#';
+        }
+        function OnlinePayment() {
+            window.location.href = '#';
+        }
+        function AboutUs() {
+            window.location.href = 'https://github.com/Abi6040/REGISTRaTION/blob/d3e45aff5dbd2ec7579d786ad92a617224bc0c41/AboutUs.html';
+        }
+    </script>
+</body>
+</html>
