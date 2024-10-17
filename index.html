@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +93,7 @@
         }
         .right {
             transform: translateX(30px) translateZ(-25px) rotateY(5deg);
-            background-image: url(https://www.pngmart.com/files/22/QR-Code-PNG-Background-Image.png);
+            background-image: url(https://th.bing.com/th/id/OIP.nzU2AHzSgvPUAga2fu39KgHaIW?rs=1&pid=ImgDetMain);
         }
         .righter {
             transform: translateX(60px) translateZ(-50px) rotateY(10deg);
@@ -113,6 +114,18 @@
             justify-content: center;
             align-items: center;
         }
+        @media (max-width: 768px) {
+            .all {
+                flex-direction: column;
+            }
+        }
+
+        /* Hover effect for mobile using touch/click */
+        @media (hover: none) {
+            .all:hover {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -124,11 +137,11 @@
             <div class="text">TECHNICAL EVENTS</div>
         </div>
         <div class="center" onclick="GoogleForm()">
-                        <div class="explainer"><span>Hover me</span></div>
+            <div class="explainer"><span>Click me</span></div> <!-- Updated text here -->
             <div class="text">REGISTER HERE</div>
         </div>
         <div class="right" onclick="OnlinePayment()">
-            <div class="text">PAYMENT QR</div>
+            <div class="text">CONTACT US</div>
         </div>
         <div class="righter" onclick="AboutUs()">
             <div class="text">ABOUT US</div>
@@ -151,6 +164,22 @@
         function AboutUs() {
             window.location.href = 'AboutUs.html';
         }
+        function toggleLayout() {
+            const container = document.getElementById('boxesContainer');
+            if (window.innerWidth <= 768) {
+                container.classList.remove('horizontal');
+                container.classList.add('vertical');
+            } else {
+                container.classList.remove('vertical');
+                container.classList.add('horizontal');
+            }
+        }
+
+        // Detect when resizing the screen
+        window.addEventListener('resize', toggleLayout);
+        window.addEventListener('load', toggleLayout);
     </script>
 </body>
 </html>
+
+
