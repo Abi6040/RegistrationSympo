@@ -3,19 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>10 Image Slider</title>
+  <title>MEMORIES ZYNIX 2K24</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 <style>
-    /* General container for the slider */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgb(0, 12, 34);
+    height: 100vh;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    background-color: black;
+    padding: 15px 20px;
+    color: white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section-content {
+    margin-top: auto;
+    padding: 10px 20px;
+}
+
+.Logo {
+    width: 250px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.menu-data {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+a:hover {
+    background-color: white;
+    color: rgb(0, 12, 34);
+}
+
+.size-icon {
+    font-size: 26px;
+}
+
+#Menu-bar {
+    display: none;
+    margin-left: auto;
+}
+
+#close {
+    display: none;
+}
+
+@media (max-width:761px) {
+    .menu-data {
+        position: absolute;
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-end;
+        left: 100%;
+        top: 0;
+        transform: translate(-100%);
+        background-color: black;
+        width: 250px;
+        padding: 20px;
+        transition: display ease-in 5s;
+        z-index: -10;
+    }
+
+    #Menu-bar {
+        display: block;
+    }
+
+    #close {
+        display: block;
+    }
+
+}
+.hero-section-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(white);
+}
+
+.hero-section-content h1 {
+    font-size: var(40px);
+    text-transform: capitalize;
+    text-align: center;
+    padding: 10px 15px;
+  color:white;
+}
 .slider-container {
     width: 100%;
-    max-width: 1200px; /* Adjust this value to fit desktop size */
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
   }
-  
-  /* Styling the slides */
+
   .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -94,11 +213,29 @@
       padding: 10px;
       font-size: 20px;
     }
+
   }
   
 </style>
 </head>
 <body>
+
+  <section class="hero-section">
+    <nav class="navbar">
+        <div class="data-container">
+            <img src="techtonix'24.png" class="Logo">
+            <h1 style="margin-left: 175px; , font-style: italic; font-size: 21px">ZYNIX'24 Memories</h1>
+            <div id="menu-time" class="menu-data animate__animated ">
+                <a onclick="closebar()"><i id="close" class="size fa-solid fa-xmark"></i></a>
+                <a href="index.html">Home</a>
+                <a href="AboutUs.html">About Us</a>
+                <a href="OnlinePayments.html">Payment QR </a>
+                <a href="https://forms.gle/x5uM8uaNqvXQeeA76">Register Now</a>
+            </div>
+            <a id="Menu-bar" onclick="menubar()"></a>
+        </div>
+    </nav>
+
 
   <div class="slider-container">
     <div class="slider">
@@ -141,6 +278,7 @@
         </div>
         <!-- Slide 10 -->
       </div>
+    </section>
       <!-- Navigation arrows -->
       <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
       <button class="next" onclick="moveSlide(1)">&#10095;</button>
@@ -171,7 +309,32 @@ function moveSlide(n) {
 setInterval(() => {
   moveSlide(1);
 }, 5000);
+function menubar() {
+  var hihu = document.querySelector('.menu-data');
+  var element = document.getElementById('Menu-bar');
 
+  if (hihu) {
+      hihu.classList.remove('animate__fadeOut');
+      element.style.display = 'none';
+      hihu.style.zIndex = '1';
+      hihu.classList.add('animate__fadeIn');
+  }
+}
+
+function closebar() {
+  var hihu = document.querySelector('.menu-data');
+  var element = document.getElementById('Menu-bar');
+  if (hihu) {
+      hihu.classList.remove('animate__fadeIn');
+      hihu.style.zIndex = '-20';
+      element.style.display = 'block';
+      hihu.classList.add('animate__fadeOut');
+  }
+}
   </script>
 </body>
 </html>
+
+</head>
+
+<body>
