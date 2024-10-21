@@ -1,340 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MEMORIES ZYNIX 2K24</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us page || Learning Robo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css"
+    />
+    <style>
+      body {
+        background-color: #fad961;
+        background-image: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+      }
 
-<style>
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+      .about-container {
+        max-width: 900px;
+        margin: 0 auto;
+        font-family: "Roboto", sans-serif;
+      }
 
-.hero-section {
-    display: flex;
-    flex-direction: column;
+      .about-container p {
+        line-height: 2;
+        padding: 0 20px;
+      }
 
-    background-color: rgb(0, 12, 34);
-    height: 100vh;
-    width: 100%;
-}
+      .about-container .profile-image {
+        text-align: center;
+        padding: 30px;
+        background-color: #12192c;
+        border-radius: 17px 17px 0 0;
+      }
 
-.navbar {
-    display: flex;
-    background-color: black;
-    padding: 15px 20px;
-    color: white;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
+      .about-container .profile-image img {
+        width: 200px;
+        border-radius: 50px;
+        padding: 8px;
+      }
 
-.data-container {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+      .description {
+        position: relative;
+        background-color: #12192c;
+        padding: 20px 20px 60px 20px;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.4);
+        color: #fff;
+      }
 
-.hero-section-content {
-    margin-top: auto;
-    padding: 10px 20px;
-}
+      .our-team-heading {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 48px;
+        padding-top: 64px;
+      }
 
-.Logo {
-    width: 250px;
-}
+      .our-team {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 20px;
+        padding: 30px;
+      }
 
-a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease-in;
-    margin: 0 10px;
-    font-weight: bold;
-}
+      .our-team img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.4);
+      }
 
-.menu-data {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-}
+      .our-team .team-member {
+        position: relative;
+      }
 
-a:hover {
-    background-color: white;
-    color: rgb(0, 12, 34);
-}
-
-.size-icon {
-    font-size: 26px;
-}
-
-#Menu-bar {
-    display: none;
-    margin-left: auto;
-}
-
-#close {
-    display: none;
-}
-
-@media (max-width:761px) {
-    .menu-data {
+      .our-team .designation {
         position: absolute;
-        flex-direction: column;
-        text-align: left;
-        align-items: flex-end;
-        left: 100%;
-        top: 0;
-        transform: translate(-100%);
-        background-color: black;
-        width: 250px;
+        bottom: 30px;
+        background: #fff;
+        padding: 12px 20px;
+        border-radius: 0 20px 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        font-size: 14px;
+      }
+
+      .about-container .our-mission {
         padding: 20px;
-        transition: display ease-in 5s;
-        z-index: -10;
-    }
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
 
-    #Menu-bar {
-        display: block;
-    }
+      .about-container .our-mission p {
+        font-size: 20px;
+        font-style: italic;
+        text-align: center;
+      }
 
-    #close {
-        display: block;
-    }
+      .credit {
+        text-align: center;
+        color: #000;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+      }
 
+      .credit a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+      }
+
+    
+    .new_footer_area {
+        background: #fbfbfd;
+    }
+    
+    
+    .new_footer_top {
+        padding: 120px 0px 270px;
+        position: relative;
+          overflow-x: hidden;
+    }
+    .new_footer_area .footer_bottom {
+        padding-top: 5px;
+        padding-bottom: 50px;
+    }
+    .footer_bottom {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+        color: #7f88a6;
+        padding: 27px 0px;
+    }
+    .new_footer_top .company_widget p {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 28px;
+        color: #6a7695;
+        margin-bottom: 20px;
+    }
+    .new_footer_top .company_widget .f_subscribe_two .btn_get {
+        border-width: 1px;
+        margin-top: 20px;
+    }
+    .btn_get_two:hover {
+        background: transparent;
+        color: #5e2ced;
+    }
+    .btn_get:hover {
+        color: #fff;
+        background: #6754e2;
+        border-color: #6754e2;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
+        text-decoration: none;
+        outline: none;
+    }
+    
+    
+    
+    .new_footer_top .f_widget.about-widget .f_list li a:hover {
+        color: #5e2ced;
+    }
+    .new_footer_top .f_widget.about-widget .f_list li {
+        margin-bottom: 11px;
+    }
+    .f_widget.about-widget .f_list li:last-child {
+        margin-bottom: 0px;
+    }
+    .f_widget.about-widget .f_list li {
+        margin-bottom: 15px;
+    }
+    .f_widget.about-widget .f_list {
+        margin-bottom: 0px;
+    }
+    .new_footer_top .f_social_icon a {
+        width: 44px;
+        height: 44px;
+        line-height: 43px;
+        background: transparent;
+        border: 1px solid #e2e2eb;
+        font-size: 24px;
+    }
+    .f_social_icon a {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        font-size: 14px;
+        line-height: 45px;
+        color: #858da8;
+        display: inline-block;
+        background: #ebeef5;
+        text-align: center;
+        -webkit-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+    }
+    .ti-facebook:before {
+        content: "\e741";
+    }
+    .ti-twitter-alt:before {
+        content: "\e74b";
+    }
+    .ti-vimeo-alt:before {
+        content: "\e74a";
+    }
+    .ti-pinterest:before {
+    background: url("https://th.bing.com/th?id=OIP.xa0FgRBsvMi7bmVNCDYsCgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2") ;
+    }
+    
+    .btn_get_two {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        background: #5e2ced;
+        border-color: #5e2ced;
+        color: #fff;
+    }
+    
+    .btn_get_two:hover {
+        background: transparent;
+        color: #5e2ced;
+    }
+    
+    .new_footer_top .f_social_icon a:hover {
+        background: #5e2ced;
+        border-color: #5e2ced;
+      color:white;
+    }
+    .new_footer_top .f_social_icon a + a {
+        margin-left: 4px;
+    }
+    .new_footer_top .f-title {
+        margin-bottom: 30px;
+        color: #263b5e;
+    }
+    .f_600 {
+        font-weight: 600;
+    }
+    .f_size_18 {
+        font-size: 18px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #4b505e;
+    }
+    .new_footer_top .f_widget.about-widget .f_list li a {
+        color: #6a7695;
+    }
+    
+    
+    .new_footer_top .footer_bg {
+        position: absolute;
+        bottom: 0;
+        background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigB8iI5tb8WSVBuVUGc9UjjB8O0708X7Fdic_4O1LT4CmLHoiwhanLXiRhe82yw0R7LgACQ2IhZaTY0hhmGi0gYp_Ynb49CVzfmXtYHUVKgXXpWvJ_oYT8cB4vzsnJLe3iCwuzj-w6PeYq_JaHmy_CoGoa6nw0FBo-2xLdOPvsLTh_fmYH2xhkaZ-OGQ/s16000/footer_bg.png") no-repeat scroll center 0;
+        width: 100%;
+        height: 266px;
+    }
+    
+    .new_footer_top .footer_bg .footer_bg_one {
+        background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia0PYPxwT5ifToyP3SNZeQWfJEWrUENYA5IXM6sN5vLwAKvaJS1pQVu8mOFFUa_ET4JuHNTFAxKURFerJYHDUWXLXl1vDofYXuij45JZelYOjEFoCOn7E6Vxu0fwV7ACPzArcno1rYuVxGB7JY6G7__e4_KZW4lTYIaHSLVaVLzklZBLZnQw047oq5-Q/s16000/volks.gif") no-repeat center center;
+        width: 330px;
+        height: 105px;
+      background-size:100%;
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        -webkit-animation: myfirst 22s linear infinite;
+        animation: myfirst 22s linear infinite;
+    }
+    
+    .new_footer_top .footer_bg .footer_bg_two {
+        background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyLGwEUVwPK6Vi8xXMymsc-ZXVwLWyXhogZxbcXQYSY55REw_0D4VTQnsVzCrL7nsyjd0P7RVOI5NKJbQ75koZIalD8mqbMquP20fL3DxsWngKkOLOzoOf9sMuxlbyfkIBTsDw5WFUj-YJiI50yzgVjF8cZPHhEjkOP_PRTQXDHEq8AyWpBiJdN9SfQA/s16000/cyclist.gif") no-repeat center center;
+        width: 88px;
+        height: 100px;
+      background-size:100%;
+        bottom: 0;
+        left: 38%;
+        position: absolute;
+        -webkit-animation: myfirst 30s linear infinite;
+        animation: myfirst 30s linear infinite;
+    }
+    
+    
+    
+    @-moz-keyframes myfirst {
+      0% {
+        left: -25%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+    
+    @-webkit-keyframes myfirst {
+      0% {
+        left: -25%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+    
+    @keyframes myfirst {
+      0% {
+        left: -25%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+    .instagram-link {
+      color: #E1306C; /* Instagram brand color */
+      font-size: 24px;
+      padding-left: 50px;
+      display: inline-block;
+  }
+  
+  .instagram-link:hover {
+      color: #bc2a8d; /* Darker Instagram color for hover */
+      text-decoration: none; /* No underline on hover */
+  }
+  
+  .fa-instagram {
+      font-size: 50px; /* Adjust icon size */
+  }
+  .instagram-icon {
+    display: inline-block;
+    font-size: 24px; /* Adjust size as needed */
+    color: #E1306C; /* Instagram color */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
 }
-.hero-section-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(white);
+
+.instagram-icon:hover {
+    transform: scale(1.8); /* 1.2 makes it 20% larger, adjust as needed */
+    color: #C13584; /* Optional: Change color on hover */
 }
 
-.hero-section-content h1 {
-    font-size: var(40px);
-    text-transform: capitalize;
-    text-align: center;
-    padding: 10px 15px;
-  color:white;
-}
-.slider-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-  }
+  
+    /*************footer End*****************/
+    
+    
 
-  .slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .slide {
-    min-width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .slide img {
-    width: 100%;
-    height: 500px; /* Set a fixed height for all images */
-    object-fit: contain; /* Ensure the image fits inside the area without cropping */
-    background-color: #f0f0f0; /* Add background to fill empty space if needed */
-    display: block;
-  }
-  
-  /* Navigation arrows */
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    z-index: 10; /* Keep arrows above images */
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
-  
-  /* Hover effect for arrows */
-  .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  /* --- Media Queries for Mobile View --- */
-  
-  /* Small mobile screens (up to 600px wide) */
-  @media (max-width: 600px) {
-    .slider-container {
-      max-width: 100%; /* Use full width on mobile */
-    }
-  
-    .slide img {
-      height: 300px; /* Reduce the height for smaller screens */
-    }
-  
-    /* Adjust the size of navigation arrows for mobile */
-    .prev, .next {
-      padding: 8px;
-      font-size: 18px;
-    }
-  }
-  
-  /* Medium-sized devices like tablets (up to 900px wide) */
-  @media (max-width: 900px) {
-    .slider-container {
-      max-width: 100%; /* Use full width on tablet */
-    }
-  
-    .slide img {
-      height: 400px; /* Set a medium height for tablet screens */
-    }
-  
-    /* Adjust arrow size for tablets */
-    .prev, .next {
-      padding: 10px;
-      font-size: 20px;
-    }
-
-  }
-  
-</style>
-</head>
-<body>
-
-  <section class="hero-section">
-    <nav class="navbar">
-        <div class="data-container">
-            <img src="techtonix'24.png" class="Logo">
-            <h1 style="margin-left: 175px; , font-style: italic; font-size: 21px">ZYNIX'24 Memories</h1>
-            <div id="menu-time" class="menu-data animate__animated ">
-                <a onclick="closebar()"><i id="close" class="size fa-solid fa-xmark"></i></a>
-                <a href="index.html">Home</a>
-                <a href="AboutUs.html">About Us</a>
-                <a href="OnlinePayments.html">Payment QR </a>
-                <a href="https://forms.gle/x5uM8uaNqvXQeeA76">Register Now</a>
+      @media (max-width: 700px) {
+        .our-team {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+      }
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      .hero-section {
+          display: flex;
+          flex-direction: column;
+      
+          background-color: rgb(0, 12, 34);
+          height: 100vh;
+          width: 100%;
+      }
+      
+      .navbar {
+          display: flex;
+          background-color: black;
+          padding: 15px 20px;
+          color: white;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+      }
+      
+      .data-container {
+          width: 100%;
+          max-width: 1200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      
+      .hero-section-content {
+          margin-top: auto;
+          padding: 10px 20px;
+      }
+      
+      .Logo {
+          width: 250px;
+      }
+      
+      a {
+          text-decoration: none;
+          color: white;
+          padding: 10px 15px;
+          border-radius: 25px;
+          transition: background-color 0.3s ease-in;
+          margin: 0 10px;
+          font-weight: bold;
+      }
+      
+      .menu-data {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+      }
+      
+      a:hover {
+          background-color: white;
+          color: rgb(0, 12, 34);
+      }
+      
+      .size-icon {
+          font-size: 26px;
+      }
+      
+      #Menu-bar {
+          display: none;
+          margin-left: auto;
+      }
+      
+      #close {
+          display: none;
+      }
+      
+      @media (max-width:761px) {
+          .menu-data {
+              position: absolute;
+              flex-direction: column;
+              text-align: left;
+              align-items: flex-end;
+              left: 100%;
+              top: 0;
+              transform: translate(-100%);
+              background-color: black;
+              width: 250px;
+              padding: 20px;
+              transition: display ease-in 5s;
+              z-index: -10;
+          }
+      
+          #Menu-bar {
+              display: block;
+          }
+      
+          #close {
+              display: block;
+          }
+      
+      }
+      .hero-section-content {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: var(white);
+      }
+      
+      .hero-section-content h1 {
+          font-size: var(40px);
+          text-transform: capitalize;
+          text-align: center;
+          padding: 10px 15px;
+        color:white;
+      }
+      .slider-container {
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+          overflow: hidden;
+        }
+      
+        .slides {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+        }
+        
+        .slide {
+          min-width: 100%;
+          box-sizing: border-box;
+        }
+        
+        .slide img {
+          width: 100%;
+          height: 500px; /* Set a fixed height for all images */
+          object-fit: contain; /* Ensure the image fits inside the area without cropping */
+          background-color: #f0f0f0; /* Add background to fill empty space if needed */
+          display: block;
+        }
+        
+        /* Navigation arrows */
+        .prev, .next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0,0,0,0.5);
+          color: white;
+          padding: 10px;
+          border: none;
+          cursor: pointer;
+          z-index: 10; /* Keep arrows above images */
+        }
+        
+        .prev {
+          left: 10px;
+        }
+        
+        .next {
+          right: 10px;
+        }
+        
+        /* Hover effect for arrows */
+        .prev:hover, .next:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        /* --- Media Queries for Mobile View --- */
+        
+        /* Small mobile screens (up to 600px wide) */
+        @media (max-width: 600px) {
+          .slider-container {
+            max-width: 100%; /* Use full width on mobile */
+          }
+        
+          .slide img {
+            height: 300px; /* Reduce the height for smaller screens */
+          }
+        
+          /* Adjust the size of navigation arrows for mobile */
+          .prev, .next {
+            padding: 8px;
+            font-size: 18px;
+          }
+        }
+        
+        /* Medium-sized devices like tablets (up to 900px wide) */
+        @media (max-width: 900px) {
+          .slider-container {
+            max-width: 100%; /* Use full width on tablet */
+          }
+        
+          .slide img {
+            height: 400px; /* Set a medium height for tablet screens */
+          }
+        
+          /* Adjust arrow size for tablets */
+          .prev, .next {
+            padding: 10px;
+            font-size: 20px;
+          }
+      
+        }
+        
+      </style>
+    </head>
+    <body>
+    
+      <section class="hero-section">
+        <nav class="navbar">
+            <div class="data-container">
+                <img src="techtonix'24.png" class="Logo">
+                <h1 style="margin-left: 175px; , font-style: italic; font-size: 21px">ZYNIX'24 Memories</h1>
+                <div id="menu-time" class="menu-data animate__animated ">
+                    <a onclick="closebar()"><i id="close" class="size fa-solid fa-xmark"></i></a>
+                    <a href="index.html">Home</a>
+                    <a href="AboutUs.html">About Us</a>
+                    <a href="OnlinePayments.html">Payment QR </a>
+                    <a href="https://forms.gle/x5uM8uaNqvXQeeA76">Register Now</a>
+                </div>
+                <a id="Menu-bar" onclick="menubar()"></a>
             </div>
-            <a id="Menu-bar" onclick="menubar()"></a>
+        </nav>
+    
+    
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+              <img src="image7.png" alt="Image 1">
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+              <img src="image2.png" alt="Image 2">
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+              <img src="image4.png" alt="Image 3">
+            </div>
+            <!-- Slide 4 -->
+            <div class="slide">
+              <img src="image1.png" alt="Image 4">
+            </div>
+            <!-- Slide 5 -->
+            <div class="slide">
+              <img src="image3.png" alt="Image 5">
+            </div>
+            <!-- Slide 6 -->
+            <div class="slide">
+              <img src="image5.png" alt="Image 6">
+            </div>
+            <!-- Slide 7 -->
+            <div class="slide">
+              <img src="image9.png" alt="Image 7">
+            </div>
+            <!-- Slide 8 -->
+            <div class="slide">
+              <img src="image8.png" alt="Image 8">
+            </div>
+            <!-- Slide 9 -->
+            <div class="slide">
+              <img src="image6.png" alt="Image 9">
+            </div>
+            <!-- Slide 10 -->
+          </div>
+        </section>
+          <!-- Navigation arrows -->
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
-    </nav>
-
-
-  <div class="slider-container">
-    <div class="slider">
-      <div class="slides">
-        <!-- Slide 1 -->
-        <div class="slide">
-          <img src="image7.png" alt="Image 1">
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="image2.png" alt="Image 2">
-        </div>
-        <!-- Slide 3 -->
-        <div class="slide">
-          <img src="image4.png" alt="Image 3">
-        </div>
-        <!-- Slide 4 -->
-        <div class="slide">
-          <img src="image1.png" alt="Image 4">
-        </div>
-        <!-- Slide 5 -->
-        <div class="slide">
-          <img src="image3.png" alt="Image 5">
-        </div>
-        <!-- Slide 6 -->
-        <div class="slide">
-          <img src="image5.png" alt="Image 6">
-        </div>
-        <!-- Slide 7 -->
-        <div class="slide">
-          <img src="image9.png" alt="Image 7">
-        </div>
-        <!-- Slide 8 -->
-        <div class="slide">
-          <img src="image8.png" alt="Image 8">
-        </div>
-        <!-- Slide 9 -->
-        <div class="slide">
-          <img src="image6.png" alt="Image 9">
-        </div>
-        <!-- Slide 10 -->
       </div>
-    </section>
-      <!-- Navigation arrows -->
-      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-      <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
+    
+    
+
+    <!--FOOTER-->
+    
+
+<footer class="new_footer_area bg_color" >
+  <div class="new_footer_top">
+      <div class="container" style="padding-left: 40px;">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                  <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
+                  <p>Don’t miss any updates of our new Update For that Follow on Instagram!</p>
+                  
+                  <!-- Add Instagram Icon and Link -->
+                  <a href="https://www.instagram.com" target="_blank" class="instagram-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+          </div>
+          
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                      <h1 class="f-title f_600 t_color f_size_18">Contact Us:</h1>
+                      <ul class="list-unstyled f_list">
+                        <li><a href="#">Bala Abinesh  -80159 86040</a></li>
+                        <li><a href="#">Shibhu Shalom -82202 15258</a></li>
+                        <li><a href="#">Esther Abiya  -94883 27616</a></li>
+                        <li><a href="#">Anish         -6369 436 431</a></li>
+                      </ul>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+      <div class="footer_bg">
+          <div class="footer_bg_one"></div>
+          <div class="footer_bg_two"></div>
+      </div>
   </div>
-
-  <script>
-    let slideIndex = 0;
-const slides = document.querySelector('.slides');
-const totalSlides = document.querySelectorAll('.slide').length;
-
-function showSlide(index) {
-  if (index >= totalSlides) {
-    slideIndex = 0;
-  } else if (index < 0) {
-    slideIndex = totalSlides - 1;
-  } else {
-    slideIndex = index;
+  <div class="footer_bottom">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-6 col-sm-7">
+                  <p class="mb-0 f_400">© DEPARTMENT OF COMPUTER SCIENCE .. 2024 All rights reserved.</p>
+              </div>
+              <div class="col-lg-6 col-sm-5 text-right">
+                <p>Made <i class="icon_heart"></i> by <a href="https://www.instagram.com/abii_6040/profilecard/?igsh=OG81enVoejdzOHk1" target="_blank">@abii_6040</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      let slideIndex = 0;
+  const slides = document.querySelector('.slides');
+  const totalSlides = document.querySelectorAll('.slide').length;
+  
+  function showSlide(index) {
+    if (index >= totalSlides) {
+      slideIndex = 0;
+    } else if (index < 0) {
+      slideIndex = totalSlides - 1;
+    } else {
+      slideIndex = index;
+    }
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
   }
-  slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-}
-
-function moveSlide(n) {
-  showSlide(slideIndex + n);
-}
-
-// Auto-play the slider every 5 seconds
-setInterval(() => {
-  moveSlide(1);
-}, 5000);
-function menubar() {
-  var hihu = document.querySelector('.menu-data');
-  var element = document.getElementById('Menu-bar');
-
-  if (hihu) {
-      hihu.classList.remove('animate__fadeOut');
-      element.style.display = 'none';
-      hihu.style.zIndex = '1';
-      hihu.classList.add('animate__fadeIn');
+  
+  function moveSlide(n) {
+    showSlide(slideIndex + n);
   }
-}
-
-function closebar() {
-  var hihu = document.querySelector('.menu-data');
-  var element = document.getElementById('Menu-bar');
-  if (hihu) {
-      hihu.classList.remove('animate__fadeIn');
-      hihu.style.zIndex = '-20';
-      element.style.display = 'block';
-      hihu.classList.add('animate__fadeOut');
+  
+  // Auto-play the slider every 5 seconds
+  setInterval(() => {
+    moveSlide(1);
+  }, 5000);
+  function menubar() {
+    var hihu = document.querySelector('.menu-data');
+    var element = document.getElementById('Menu-bar');
+  
+    if (hihu) {
+        hihu.classList.remove('animate__fadeOut');
+        element.style.display = 'none';
+        hihu.style.zIndex = '1';
+        hihu.classList.add('animate__fadeIn');
+    }
   }
-}
-  </script>
-</body>
+  
+  function closebar() {
+    var hihu = document.querySelector('.menu-data');
+    var element = document.getElementById('Menu-bar');
+    if (hihu) {
+        hihu.classList.remove('animate__fadeIn');
+        hihu.style.zIndex = '-20';
+        element.style.display = 'block';
+        hihu.classList.add('animate__fadeOut');
+    }
+  }
+    </script>
+  </body>
 </html>
-
-</head>
-
-<body>
