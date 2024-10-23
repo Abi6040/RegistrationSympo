@@ -21,7 +21,7 @@
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 300px;
+            max-width: 100%;
         }
 
         .qr-container h2 {
@@ -31,8 +31,9 @@
         }
 
         .qr-code {
-            width: 200px;
-            height: 200px;
+            width: 100%;
+            max-width: 400px; /* Larger max size for bigger screens */
+            height: auto;
             margin-bottom: 20px;
         }
 
@@ -41,6 +42,26 @@
             color: #777;
         }
 
+        /* Mobile View */
+        @media (max-width: 600px) {
+            .qr-container {
+                padding: 20px;
+            }
+
+            .qr-container h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .qr-code {
+                width: 100%;
+                max-width: none; /* Full width for mobile */
+            }
+
+            .qr-container p {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
